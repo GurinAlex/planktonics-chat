@@ -1,0 +1,23 @@
+.content {
+  margin: 40px auto;
+
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__text {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: left;
+  }
+}

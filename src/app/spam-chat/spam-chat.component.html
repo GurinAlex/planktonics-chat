@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="chat">
+    <div class="chat__title">
+      Флудилка
+    </div>
+
+    <div class="chat__content">
+      <div *ngIf="toggle" class="chat__content-editing">
+        <div class="chat__content-editing__edit" (click)="change()">Редактировать</div>
+        <div class="chat__content-editing__delete" (click)="remove()">Удалить</div>
+      </div>
+
+      <div class="chat__content-messages">
+        <div *ngFor="let message of messageService.messages" class="chat__content-messages__item">
+          <app-messeges
+            [message]="message"
+            (messageToChange)="changeMessage($event)"
+          ></app-messeges>
+        </div>
+      </div>
+
+      <div class="chat__content-input">
+        <div class="chat__content-input__input">
+          <textarea [(ngModel)]="message" rows="1" placeholder="Введите сообщение..."></textarea>
+
+         <app-emoji (addEmoji)="addEmoji($event)"></app-emoji>
+        </div>
+
+        <div class="chat__content-input__send">
+          <button [disabled]="toggle" (click)="sendMessage()">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

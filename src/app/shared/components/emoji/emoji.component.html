@@ -1,0 +1,12 @@
+<div class="chat__content-input__input_smile">
+  <button class="btn-smile" (click)="toggleEmojiPicker()">😀</button><br>
+</div>
+
+<div class="chat__content-input__input_smile-choice">
+  <emoji-mart
+    class="emoji-mart"
+    set="{{set}}" *ngIf="showEmojiPicker"
+    (emojiSelect)="addEmoji($event)"
+    title="Выбери смайл">
+  </emoji-mart>
+</div>

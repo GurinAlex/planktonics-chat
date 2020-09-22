@@ -1,0 +1,56 @@
+@import "src/styles";
+
+.header {
+  height: 60px;
+  border-bottom: 1px solid darkgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-content {
+    max-width: $container-width;
+    width: 100%;
+    //outline: 1px solid orange;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 30px;
+    align-items: center;
+
+    &__name {
+      font-size: 30px;
+      font-style: italic;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    &__info {
+      list-style: none;
+      display: flex;
+      @include font-montserrat;
+      font-weight: 400;
+      font-size: 16px;
+
+      &_item{
+        a {
+          text-decoration: none;
+          color: black;
+        }
+
+        &.active {
+          a {
+            color: red;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+

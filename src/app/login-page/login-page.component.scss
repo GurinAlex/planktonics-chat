@@ -1,0 +1,58 @@
+.form-login {
+  border: 1px solid darkgrey;
+  border-radius: 6px;
+  margin: 100px auto;
+  width: 52%;
+  min-height: 300px;
+
+  &__title {
+    text-align: center;
+    font-size: 26px;
+    margin: 20px 0;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 75%;
+    margin: 20px auto;
+
+    label {
+      margin-bottom: 5px;
+
+    }
+    input {
+      height: 33px;
+      outline: none;
+      padding: 2px 10px;
+    }
+    &_validation {
+      margin-top: 5px;
+
+      small {
+        color: red;
+      }
+    }
+  }
+}
+
+.btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  background: none;
+  width: 200px;
+  height: 40px;
+  border: 1px solid darkgrey;
+  border-radius: 6px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.alert {
+  text-align: center;
+  color: red;
+  margin: 20px auto;
+}

@@ -1,0 +1,24 @@
+<div class="wrapper" [ngClass]="{
+  your: message.author === username,
+  active: active && toggle
+  }">
+  <div class="message" (click)="changeMessage()">
+    <div class="message__message">
+      {{message.message}}
+    </div>
+
+    <div *ngIf="username !== message.author; else yourself" class="message__author">
+      {{message.author}} {{message.date | date: 'HH:mm'}}
+    </div>
+  </div>
+</div>
+
+
+<ng-template #yourself>
+  <div *ngIf="!message.changed" class="message__author">
+    {{message.date | date: 'HH:mm'}}
+  </div>
+  <div *ngIf="message.changed" class="message__author">
+    Изменено {{message.date | date: 'HH:mm'}}
+  </div>
+</ng-template>

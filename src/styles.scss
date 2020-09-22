@@ -1,0 +1,143 @@
+@import "normalize";
+@import '~@ctrl/ngx-emoji-mart/picker';
+
+* {
+  box-sizing: border-box;
+}
+
+// == Mixins == //
+@mixin font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+// !== Mixins == //
+
+// == Variables == //
+$container-width: 1200px;
+// !== Variables == //
+
+body {
+  @include font-lato;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.chat {
+  width: 70%;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    font-size: 25px;
+    @include font-montserrat;
+    margin: 20px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darkgrey;
+    border-radius: 4px;
+    min-height: 450px;
+
+    &-editing {
+      height: 40px;
+      border-bottom: 1px solid darkgrey;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      &__edit {
+        margin-right: 20px;
+      }
+      &__delete {
+        margin-right: 20px;
+      }
+    }
+
+    &-messages {
+      //flex: 1 1 auto;
+      height: 400px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar-track {border-radius: 4px;}
+      &::-webkit-scrollbar {width: 6px;}
+      &::-webkit-scrollbar-thumb {border-radius: 4px;background: #f0f2f5;}
+    }
+
+    &-input {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid darkgrey;
+      height: 50px;
+
+
+      &__send {
+        button {
+          border: none;
+          padding: 10px 30px;
+          font-size: 14px;
+          border-radius: 6px;
+          background-color: rgb(189,211,238);
+          outline: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__input {
+        width: 70%;
+        margin-left: 5%;
+        height: 70%;
+        position: relative;
+
+        &_smile {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+
+        &_smile-choice {
+          position: absolute;
+          bottom: 100%;
+          right: 0;
+        }
+
+        textarea {
+          width: 100%;
+          height: 100%;
+          border: 1px solid darkgrey;
+          padding: 7px 50px 0 10px;
+          resize: none;
+          border-radius: 6px;
+          overflow-y: auto;
+          outline: none;
+
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+
+        &_smile {
+          position: absolute;
+          right: 10px;
+          top: 5px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

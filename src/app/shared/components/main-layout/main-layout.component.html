@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header-content">
+    <div class="header-content__name">
+      <a routerLink="/"> Planktonics </a>
+    </div>
+    <ul *ngIf="login.isAuthenticated()" class="header-content__info">
+      <li routerLinkActive="active" class="header-content__info_item"><a routerLink="/work">Рабочий чат</a></li>
+      <li routerLinkActive="active" class="header-content__info_item"><a routerLink="/spam">Спам</a></li>
+      <li class="header-content__info_item"> <a href="#" (click)="logout($event)">Выход</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<router-outlet></router-outlet>
