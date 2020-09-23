@@ -56,14 +56,15 @@ body {
 
       &__edit {
         margin-right: 20px;
+        cursor: pointer;
       }
       &__delete {
+        cursor: pointer;
         margin-right: 20px;
       }
     }
 
     &-messages {
-      //flex: 1 1 auto;
       height: 400px;
       overflow-y: auto;
 

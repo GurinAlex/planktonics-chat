@@ -6,6 +6,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./emoji.component.scss']
 })
 export class EmojiComponent implements OnInit {
+  // tslint:disable-next-line:no-output-rename
   @Output('addEmoji') emoji: EventEmitter<any> = new EventEmitter<any>();
   showEmojiPicker = false;
   sets = [
@@ -27,6 +28,5 @@ export class EmojiComponent implements OnInit {
   }
   addEmoji(event): void {
     this.emoji.emit(event.emoji.native);
-    // const text = `${message}${event.emoji.native}`;
   }
 }

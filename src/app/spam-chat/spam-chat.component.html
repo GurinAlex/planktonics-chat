@@ -14,6 +14,7 @@
         <div *ngFor="let message of messageService.messages" class="chat__content-messages__item">
           <app-messeges
             [message]="message"
+            [toggle]="toggle"
             (messageToChange)="changeMessage($event)"
           ></app-messeges>
         </div>

@@ -1,14 +1,19 @@
+@import "src/styles";
 .form-login {
-  border: 1px solid darkgrey;
+  margin: 80px auto;
+  width: 700px;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 6px;
-  margin: 100px auto;
-  width: 52%;
-  min-height: 300px;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 
   &__title {
+    @include font-montserrat;
     text-align: center;
     font-size: 26px;
-    margin: 20px 0;
+    margin: 40px 0;
   }
 
   &__input {
@@ -19,37 +24,57 @@
     margin: 20px auto;
 
     label {
-      margin-bottom: 5px;
+      margin-left: 1px;
+      font-size: 14px;
+      @include font-montserrat;
+    }
 
-    }
     input {
-      height: 33px;
+      width: 100%;
       outline: none;
-      padding: 2px 10px;
+      border: none;
+      border-bottom: 1px solid darkgrey;
+      height: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+
+      &::placeholder {
+        font-family: 'Lato', sans-serif;
+      }
     }
+
     &_validation {
       margin-top: 5px;
 
       small {
         color: red;
+        font-size: 14px;
       }
     }
   }
 }
 
 .btn {
-  display: block;
-  margin: 0 auto 20px auto;
-  background: none;
-  width: 200px;
-  height: 40px;
-  border: 1px solid darkgrey;
-  border-radius: 6px;
+  border: none;
+  outline: none;
+  margin: 30px auto;
+  padding: 15px 100px;
+  border-radius: 20px;
+  background: rgb(189, 211, 238);
+  color: #3b3b3b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  width: 400px;
+  cursor: pointer;
+  transition: .3s;
 
-  &:hover {
-    cursor: pointer;
+  &:disabled {
+    background-color: #4f7170;
+    cursor: not-allowed;
   }
 }
+
 
 .alert {
   text-align: center;

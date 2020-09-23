@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class MessagesComponent implements OnInit {
   @Input() message;
   @Input() toggle;
+  // tslint:disable-next-line:no-output-rename
   @Output('messageToChange') messageToChange: EventEmitter<any> = new EventEmitter<any>();
   username = localStorage.getItem('username');
   active = false;

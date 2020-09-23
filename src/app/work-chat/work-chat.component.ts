@@ -6,7 +6,8 @@ import {Message, MessageService} from '../shared/message.service';
 @Component({
   selector: 'app-work-chat',
   templateUrl: './work-chat.component.html',
-  styleUrls: ['./work-chat.component.scss']
+  styleUrls: ['./work-chat.component.scss'],
+  providers: [MessageService]
 })
 export class WorkChatComponent implements OnInit {
   message = '';
@@ -17,6 +18,7 @@ export class WorkChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageService.messages = workMessages;
+    console.log(this.messageService.messages);
   }
 
   sendMessage(): void {
@@ -58,13 +60,16 @@ export class WorkChatComponent implements OnInit {
     this.messageToChange.forEach(message => {
       this.messageService.removeMessage(message.id);
     });
+    this.messageToChange = [];
     this.toggle = false;
     this.message = '';
+    console.log(this.messageToChange);
   }
 
   change(): void {
     this.messageToChange[0].message = this.message;
     this.messageService.changeMessage(this.messageToChange[0]);
+    this.messageToChange = [];
     this.toggle = false;
     this.message = '';
   }

@@ -7,7 +7,8 @@ import {Message, MessageService} from '../shared/message.service';
 @Component({
   selector: 'app-spam-chat',
   templateUrl: './spam-chat.component.html',
-  styleUrls: ['./spam-chat.component.scss']
+  styleUrls: ['./spam-chat.component.scss'],
+  providers: [MessageService]
 })
 export class SpamChatComponent implements OnInit {
 
@@ -59,6 +60,8 @@ export class SpamChatComponent implements OnInit {
     this.messageToChange.forEach(message => {
       this.messageService.removeMessage(message.id);
     });
+
+    // this.messageToChange = [];
     this.toggle = false;
     this.message = '';
   }

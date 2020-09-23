@@ -8,20 +8,17 @@ export interface Message {
   changed?: boolean;
 }
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class MessageService {
   messages: Message[] = [];
-
-  init(messages: Message[]): void {
-    this.messages = messages;
-  }
 
   addMessage(message: Message): void {
     this.messages.push(message);
   }
 
-  removeMessage(id: string | number): void {
+  removeMessage(id: string): void {
     this.messages = this.messages.filter(message => message.id !== id);
+    console.log(this.messages);
   }
 
   changeMessage(changedMessage: Message): void {

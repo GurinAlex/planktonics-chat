@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService, User} from '../shared/login.service';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -33,12 +34,10 @@ export class LoginPageComponent implements OnInit {
       password: this.form.value.password
     };
 
-    this.login.login(user).subscribe(response => {
+    this.login.login(user).subscribe(() => {
       this.form.reset();
       this.router.navigate(['/']);
       this.submitted = false;
-    }, error => this.submitted = false);
-
-    console.log(this.form.value);
+    }, () => this.submitted = false);
   }
 }
