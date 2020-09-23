@@ -17,8 +17,11 @@ export class MessageService {
   }
 
   removeMessage(id: string): void {
-    this.messages = this.messages.filter(message => message.id !== id);
-    console.log(this.messages);
+    this.messages.forEach((message, index) => {
+      if (message.id === id) {
+        this.messages.splice(index, 1);
+      }
+    });
   }
 
   changeMessage(changedMessage: Message): void {

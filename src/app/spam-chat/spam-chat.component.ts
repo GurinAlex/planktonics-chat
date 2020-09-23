@@ -60,8 +60,7 @@ export class SpamChatComponent implements OnInit {
     this.messageToChange.forEach(message => {
       this.messageService.removeMessage(message.id);
     });
-
-    // this.messageToChange = [];
+    this.messageToChange = [];
     this.toggle = false;
     this.message = '';
   }

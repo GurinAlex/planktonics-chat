@@ -18,7 +18,6 @@ export class WorkChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageService.messages = workMessages;
-    console.log(this.messageService.messages);
   }
 
   sendMessage(): void {
@@ -63,7 +62,6 @@ export class WorkChatComponent implements OnInit {
     this.messageToChange = [];
     this.toggle = false;
     this.message = '';
-    console.log(this.messageToChange);
   }
 
   change(): void {
